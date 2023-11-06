@@ -1,6 +1,6 @@
 async function getList() {
   try {
-    const response = await axios.get("auth/user/products");
+    const response = await axios.get("api/auth/user/products");
     showListProduct(response);
   } catch (error) {
     //error

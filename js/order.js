@@ -13,7 +13,7 @@ async function getCustomer() {
     document.querySelector(".customername").innerText = username;
 
     // call api get listuser
-    const response = await axios.get(`auth/manager/users/products/${userId}`);
+    const response = await axios.get(`api/auth/manager/users/products/${userId}`);
     showList(response);
   } catch (error) {
     //error

@@ -6,7 +6,7 @@ async function getUser() {
     const userId = payloadDecoded._id;
 
     // call api get inforUser
-    const response = await axios.get(`auth/user/infor/${userId}`);
+    const response = await axios.get(`api/auth/user/infor/${userId}`);
     showUser(response);
   } catch (error) {
     //error
@@ -53,7 +53,7 @@ async function handleSubmitUpdateUser(userId) {
       alert("Vui lòng nhập mật khẩu mới.");
     } else {
       // gui value
-      const response = await axios.put(`auth/user/infor/update/${userId}`, {
+      const response = await axios.put(`api/auth/user/infor/update/${userId}`, {
         username: username,
         email: email,
         password: password,

@@ -6,7 +6,7 @@ async function addToCartProduct(productName, productPrice) {
       price_product: productPrice,
     };
 
-    const response = await axios.post("auth/user/products/create", productData);
+    const response = await axios.post("api/auth/user/products/create", productData);
 
     if (response.status === 200) {
       console.log("Thêm thành công"); // In ra thông báo từ máy chủ

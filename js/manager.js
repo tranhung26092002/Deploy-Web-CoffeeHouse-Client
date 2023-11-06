@@ -6,7 +6,7 @@ document.querySelector(".username").innerText = payloadDecode.username;
 async function getListUser() {
   try {
     // call api get listuser
-    const response = await axios.get("auth/manager/users");
+    const response = await axios.get("api/auth/manager/users");
     showListUser(response);
   } catch (error) {
     //error

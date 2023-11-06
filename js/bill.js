@@ -1,6 +1,6 @@
 async function getListBill() {
   try {
-    const response = await axios.get("auth/user/bills/list");
+    const response = await axios.get("api/auth/user/bills/list");
     showList(response);
   } catch (error) {
     //error
@@ -58,7 +58,7 @@ function showList(response) {
 async function deleteBill() {
   try {
     // call api
-    const response = await axios.delete(`auth/user/bills/deleteAll`);
+    const response = await axios.delete(`api/auth/user/bills/deleteAll`);
     if (response.status === 200) {
       window.location.reload();
     }

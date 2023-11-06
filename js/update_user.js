@@ -15,7 +15,7 @@ if (userId) {
 async function getUser(userId) {
   try {
     // call api get listuser
-    const response = await axios.get(`auth/admin/users/user/${userId}`);
+    const response = await axios.get(`api/auth/admin/users/user/${userId}`);
     showUser(response);
   } catch (error) {
     //error
@@ -63,7 +63,7 @@ async function handleSubmitUpdateUser(userId) {
     if (new_password === "") {
       alert("Vui lòng nhập mật khẩu mới.");
     } else {
-      const response = await axios.put(`auth/admin/users/update/${userId}`, {
+      const response = await axios.put(`api/auth/admin/users/update/${userId}`, {
         username: username,
         email: email,
         password: password,

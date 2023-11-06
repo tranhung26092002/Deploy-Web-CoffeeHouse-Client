@@ -1,7 +1,7 @@
 async function getListUser() {
   try {
     // call api get listuser
-    const response = await axios.get("auth/admin/users");
+    const response = await axios.get("api/auth/admin/users");
     showListUser(response);
     //show name
     const accessToken = localStorage.getItem("access_token");
@@ -61,7 +61,7 @@ function handleUpdateUser(userId) {
 async function handleDeleteUser(userId) {
   try {
     // call api
-    const response = await axios.delete(`auth/admin/users/delete/${userId}`);
+    const response = await axios.delete(`api/auth/admin/users/delete/${userId}`);
     if (response.status === 200) {
       window.location.reload();
     }
