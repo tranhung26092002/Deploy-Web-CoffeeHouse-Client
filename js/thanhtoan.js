@@ -62,7 +62,7 @@ async function handleDeleteProduct(productId) {
   try {
     // call api
     const response = await axios.delete(
-      `auth/user/products/delete/${productId}`
+      `api/auth/user/products/delete/${productId}`
     );
     if (response.status === 200) {
       window.location.reload();
@@ -85,7 +85,7 @@ async function decrementQuantity(productId) {
       quantityInput.value = quantity - 1;
     }
 
-    const response = await axios.put(`auth/user/products/update/${productId}`, {
+    const response = await axios.put(`api/auth/user/products/update/${productId}`, {
       quantity: quantityInput.value,
     });
     if (response.status === 200) {
@@ -102,7 +102,7 @@ async function incrementQuantity(productId) {
     const quantity = parseInt(quantityInput.value) + 1;
     quantityInput.value = quantity;
 
-    const response = await axios.put(`auth/user/products/update/${productId}`, {
+    const response = await axios.put(`api/auth/user/products/update/${productId}`, {
       quantity: quantityInput.value,
     });
     if (response.status === 200) {
@@ -116,7 +116,7 @@ async function incrementQuantity(productId) {
 async function submitBill() {
   try {
     // call api
-    const response = await axios.delete(`auth/user/products/deleteAll`);
+    const response = await axios.delete(`api/auth/user/products/deleteAll`);
     if (response.status === 200) {
       window.location.href = "bill.html";
     }
@@ -141,7 +141,7 @@ async function checkout() {
     ).value;
 
     // gui value
-    const response = await axios.post("auth/user/bills/create", {
+    const response = await axios.post("api/auth/user/bills/create", {
       phoneNumber: phoneNumber,
       address: address,
       discountCode: discountCode,
